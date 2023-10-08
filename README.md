@@ -12,5 +12,8 @@ Start to create a ecommerce project using a clean code to practise my knowledge 
 
 I use this tools to create my project :
 
-Frontend Part : React Styling Part : Tailwindcss - material Backend Part : Firebase
-Redux : Redux Firebase FireStore : Context Api
+        Frontend Part : React 
+        Styling Part : Tailwindcss - material
+        Backend Part : Firebase
+        Redux : Redux
+        Firebase FireStore : Context Api

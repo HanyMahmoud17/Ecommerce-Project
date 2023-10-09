@@ -2,98 +2,103 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import myContext from '../../context/data/myContext'
+import { FaFacebook, FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
 
 export default function Footer() {
-    const context = useContext(myContext)
-    const { toggleMode, mode } = context
-    return (
-        <footer className="text-gray-600 body-font bg-gray-300" style={{ backgroundColor: mode === 'dark' ? 'rgb(46 49 55)' : '', color: mode === 'dark' ? 'white' : '', }}>
-            <div className="container px-5 py-20 mx-auto" >
-                <div className="flex flex-wrap md:text-left text-center order-first">
-                    <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3" style={{ color: mode === 'dark' ? 'white' : '' }}>CATEGORIES</h2>
-                        <nav className="list-none mb-5">
-                            <li>
-                                <a className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Home</a>
-                            </li>
-                            <li>
-                                <a className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Order</a>
-                            </li>
-                            <li>
-                                <a className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Local For Vocal</a>
-                            </li>
-                            <li>
-                                <a className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Cart</a>
-                            </li>
-                        </nav>
-                    </div>
-                    <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3 uppercase" style={{ color: mode === 'dark' ? 'white' : '' }}>Customer Service</h2>
-                        <nav className="list-none mb-10">
-                            <li>
-                                <Link to={'/returnpolicy'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Return Policy</Link>
-                            </li>
-                            <li>
-                                <Link to={'/about'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>About</Link>
-                            </li>
-                            <li>
-                                <Link to={'/contact'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Contact Us</Link>
-                            </li>
-                        </nav>
-                    </div>
+  const context = useContext(myContext)
+  const { toggleMode, mode } = context
+  return (
+    <footer className="text-gray-600 body-font bg-gray-300" style={{ backgroundColor: mode === 'dark' ? 'rgb(46 49 55)' : '', color: mode === 'dark' ? 'white' : '', }}>
 
-                    <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3" style={{ color: mode === 'dark' ? 'white' : '' }}>Services</h2>
-                        <nav className="list-none mb-10">
-                            <li>
-                                <Link to={'/privacypolicy'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Privacy</Link>
-                            </li>
-
-                        </nav>
-                    </div>
-                    <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <img src="https://ecommerce-sk.vercel.app/pay.png" alt="" />
-                    </div>
-                </div>
-
+      <div className="bg-color-primary-dark relative">
+        <div className="container px-5 py-20 mx-auto">
+          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 pb-10">
+            <div className="space-y-6">
+              <h4 className="font-bold text-lg">Ecommeerce</h4>
+              <p className="leading-relaxed">
+                This Should Be Used To Tell A Story And Include Any Testimonials You
+                Might Have About Your Product Or Service For Your Clients
+              </p>
+              <div className="flex gap-5 items-center">
+                <p>Follow Us</p>
+                <FaFacebook className="text-gray-600 cursor-pointer hover:text-gray-800" />
+                <FaTwitter className="text-gray-600 cursor-pointer hover:text-gray-800" />
+                <FaYoutube className="text-gray-600 cursor-pointer hover:text-gray-800" />
+                <FaInstagram className="text-gray-600 cursor-pointer hover:text-gray-800" />
+              </div>
+              
             </div>
-
-            <div className="bg-gray-200" style={{ backgroundColor: mode === 'dark' ? 'rgb(55 57 61)' : '', color: mode === 'dark' ? 'white' : '', }}>
-                <div className="container px-5 py-3 mx-auto flex items-center sm:flex-row flex-col">
-                    <Link to={'/'} className='flex'>
-                        <div className="flex ">
-                            <h1 className=' text-2xl font-bold text-black  px-2 py-1 rounded' style={{ color: mode === 'dark' ? 'white' : '', }}>Ecommerce</h1>
-                        </div>
+            <div className="flex justify-between md:justify-around">
+              <div className="space-y-6">
+                <h4 className="font-bold text-lg">Quick Links</h4>
+                <ul className="space-y-3">
+                  <li className="underline hover:no-underline hover:text-gray-500">
+                  <Link to={'/'}>
+                  Home
                     </Link>
-                    <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4" style={{ color: mode === 'dark' ? 'white' : '' }}>© 2023 Ecommerce —
-                        <a href="https://github.com/HanyMahmoud17/Ecommerce-Project" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank" style={{ color: mode === 'dark' ? 'white' : '' }}>https://github.com</a>
-                    </p>
-                    <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-                        <a className="text-gray-500">
-                            <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-5 h-5" viewBox="0 0 24 24">
-                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                            </svg>
-                        </a>
-                        <a className="ml-3 text-gray-500">
-                            <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-5 h-5" viewBox="0 0 24 24">
-                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-                            </svg>
-                        </a>
-                        <a className="ml-3 text-gray-500">
-                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} className="w-5 h-5" viewBox="0 0 24 24">
-                                <rect width={20} height={20} x={2} y={2} rx={5} ry={5} />
-                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
-                            </svg>
-                        </a>
-                        <a className="ml-3 text-gray-500">
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth={0} className="w-5 h-5" viewBox="0 0 24 24">
-                                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
-                                <circle cx={4} cy={4} r={2} stroke="none" />
-                            </svg>
-                        </a>
-                    </span>
-                </div>
+                  </li>
+                  <li className="underline hover:no-underline hover:text-gray-500">
+                    <a href="#features">Features</a>
+                  </li>
+                  <li className="underline hover:no-underline hover:text-gray-500">
+                    <a href="#testimonial">Testimonial</a>
+                  </li>
+                  <li className="underline hover:no-underline hover:text-gray-500">
+                    <a href="#pricing">Pricing</a>
+                  </li>
+                  <li className="underline hover:no-underline hover:text-gray-500">
+                    <a href="#blog">Blog</a>
+                  </li>
+                  <li className="underline hover:no-underline hover:text-gray-500">
+                    <a href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="space-y-6">
+                <h4 className="font-bold text-lg">Help</h4>
+                <ul className="space-y-3">
+                  <li className="underline hover:no-underline hover:text-gray-500">
+                  <Link to={'/returnpolicy'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Return Policy</Link>
+                  </li>
+                  <li className="underline hover:no-underline hover:text-gray-500">
+                  <Link to={'/about'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>About</Link>
+                  </li>
+                  <li className="underline hover:no-underline hover:text-gray-500">
+                  <Link to={'/contact'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Contact Us</Link>
+                  </li>
+                  <li className="underline hover:no-underline hover:text-gray-500">
+                  <Link to={'/privacypolicy'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Privacy</Link>
+                  </li>
+                </ul>
+              </div>
             </div>
-        </footer>
-    )
+            <div className="space-y-6">
+              <h4 className="font-bold text-lg">Newsletter</h4>
+              <p className="leading-relaxed">
+                Subscribe With Email And Loads Of News Will Be Sent To You
+              </p>
+              <div className="flex items-center">
+                <input
+                  type="text"
+                  className="w-3/4 text-color-gray bg-color-white p-2 lg:p-3 rounded-l-md focus:outline-none"
+                  placeholder="Enter Your Email"
+                />
+                <button
+                  type="submit"
+                  className="bg-color-secondary px-4 py-2 lg:px-5 lg:py-3 rounded-r-md hover:opacity-90"
+                >
+                  <i className="fa-solid fa-chevron-right" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center pt-10 border-t border-color-gray">
+          <p className="text-gray-500" style={{ color: mode === 'dark' ? 'white' : '' }}>© 2023 Ecommerce —
+                <a href="https://github.com/HanyMahmoud17/Ecommerce-Project" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank" style={{ color: mode === 'dark' ? 'white' : '' }}>https://github.com</a>
+             </p> 
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
 }

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import myContext from '../../context/data/myContext';
 import Layout from '../../components/layout/Layout';
+import Modal from '../../components/modal/Modal';
 
 
 function Cart() {
@@ -10,10 +11,11 @@ function Cart() {
 
   return (
     <Layout >
-      <div className="h-screen bg-gray-100 pt-5 " style={{ backgroundColor: mode === 'dark' ? '#282c34' : '', color: mode === 'dark' ? 'white' : '', }}>
+      <div className="h-screen bg-gray-100 pt-28  " style={{ backgroundColor: mode === 'dark' ? '#282c34' : '', color: mode === 'dark' ? 'white' : '', }}>
         <h1 className="mb-10 text-center text-2xl font-bold">Cart Items</h1>
         <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0 ">
           <div className="rounded-lg md:w-2/3 ">
+
             <div className="justify-between mb-6 rounded-lg border  drop-shadow-xl bg-white p-6  sm:flex  sm:justify-start" style={{ backgroundColor: mode === 'dark' ? 'rgb(32 33 34)' : '', color: mode === 'dark' ? 'white' : '', }}>
               <img src="https://dummyimage.com/400x400" alt="product-image" className="w-full rounded-lg sm:w-40" />
               <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
@@ -49,13 +51,8 @@ function Cart() {
                 <p className="mb-1 text-lg font-bold" style={{ color: mode === 'dark' ? 'white' : '' }}>₹200</p>
               </div>
             </div>
-            {/* <Modal  /> */}
-            <button
-              type="button"
-              className="w-full  bg-violet-600 py-2 text-center rounded-lg text-white font-bold "
-            >
-              Buy Now
-            </button>
+            <Modal  />
+            
           </div>
         </div>
       </div>

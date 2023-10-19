@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 
 function Signup() {
+
+    
    
     return (
         <div className=' flex justify-center items-center h-screen'>

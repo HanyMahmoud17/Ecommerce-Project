@@ -51,6 +51,9 @@ function MyState(props) {
     try {
       await addDoc(productRef, products)
       toast.success("Product Add successfully")
+      setTimeout(()=>{
+        window.location.href=('/dashboard')
+      },800)
       getProductData()
       closeModal()
       setLoading(false)
@@ -67,12 +70,14 @@ function MyState(props) {
   const getProductData = async () => {
     setLoading(true)
     try {
+      // this to get data of the products and order it by time
       const q = query(
         collection(fireDB, "products"),
         orderBy("time"),
         // limit(5)
       );
-      const data = onSnapshot(q, (QuerySnapshot) => {
+      // this to listen of change that happens to the data and to add id for products array
+     const data = onSnapshot(q, (QuerySnapshot) => {
         let productsArray = [];
         QuerySnapshot.forEach((doc) => {
           productsArray.push({ ...doc.data(), id: doc.id });

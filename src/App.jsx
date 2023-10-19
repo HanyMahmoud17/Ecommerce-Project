@@ -5,6 +5,7 @@ import {
   Routes,
 } from "react-router-dom";
 
+// main component
 import Home from './pages/home/Home';
 import Order from './pages/order/Order';
 import Cart from './pages/cart/Cart';
@@ -14,6 +15,10 @@ import MyState from './context/data/myState';
 import Login from './pages/registration/Login';
 import Signup from './pages/registration/Signup';
 import ProductInfo from './pages/productInfo/ProductInfo';
+
+// toast 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -31,6 +36,7 @@ function App() {
           <Route path="/productinfo/:id" element={<ProductInfo />} />
           <Route path="/*" element={<NoPage/>} />
         </Routes>
+        <ToastContainer/>
       </Router>
     </MyState>
   )

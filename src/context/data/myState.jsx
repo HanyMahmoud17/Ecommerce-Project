@@ -14,9 +14,14 @@ function MyState(props) {
       document.body.style.backgroundColor='white'
     }
   }
+
+  // this is the loading state
+  const [loading,setLoading]=useState(false)
+
+
   return (
     // i here pass the value that i need 
-    <MyContext.Provider value={{mode,toggleMode }}>
+    <MyContext.Provider value={{mode,toggleMode,loading,setLoading }}>
         {props.children}
     </MyContext.Provider>
   )

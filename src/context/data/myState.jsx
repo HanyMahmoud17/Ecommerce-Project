@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import MyContext from './myContext';
 import { toast } from 'react-toastify';
-import { Timestamp, addDoc, collection, onSnapshot, orderBy, query,doc,deleteDoc,setDoc } from 'firebase/firestore';
+import { Timestamp, addDoc, collection, onSnapshot, orderBy, query,doc,deleteDoc,setDoc,getDocs } from 'firebase/firestore';
 import { fireDB } from '../../firebase/FirebaseConfig';
 
 function MyState(props) {
@@ -159,15 +159,61 @@ function MyState(props) {
   }
 
 
+
+  // user
+  const [user, setUser] = useState([]);
+
+  const getUserData = async () => {
+    setLoading(true)
+    try {
+      const result = await getDocs(collection(fireDB, "users"))
+      console.log(result);
+      const usersArray = [];
+      result.forEach((doc) => {
+        usersArray.push(doc.data());
+        setLoading(false)
+      });
+      setUser(usersArray);
+      console.log(usersArray)
+      setLoading(false);
+    } catch (error) {
+      console.log(error)
+      setLoading(false)
+    }
+  }
+
+// filter state
+const [searchkey, setSearchkey] = useState('')
+const [filterType, setFilterType] = useState('')
+const [filterPrice, setFilterPrice] = useState('')
+
+
+// Reset filter values to their initial state
+const handleResetFilter = () => {
+  setSearchkey('');
+  setFilterType('');
+  setFilterPrice('');
+  setInitialState();
+};
+
+
   useEffect(() => {
     getProductData();
     getOrderData();
+    getUserData();
   }, []);
 
 
   return (
     // i here pass the value that i need 
-    <MyContext.Provider value={{mode,toggleMode,loading,setLoading, product,products, setProducts,addProduct,edithandle,updateProduct,deleteProduct,order }}>
+    <MyContext.Provider value={{mode,toggleMode,loading,setLoading,
+     product,products, setProducts,addProduct,
+     edithandle,updateProduct,deleteProduct,
+     order,
+     user,
+     searchkey, setSearchkey,filterType, setFilterType,
+     filterPrice, setFilterPrice,handleResetFilter
+      }}>
         {props.children}
     </MyContext.Provider>
   )

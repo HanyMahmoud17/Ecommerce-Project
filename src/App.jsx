@@ -17,6 +17,7 @@ import Signup from './pages/registration/Signup';
 import ProductInfo from './pages/productInfo/ProductInfo';
 import AddProduct from "./pages/admin/pages/AddProduct";
 import UpdateProduct from "./pages/admin/pages/UpdateProduct";
+import Allproducts from './pages/allproducts/Allproducts';
 // toast 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -29,6 +30,7 @@ function App() {
     <Router>
       <Routes>
           <Route path="/" element={<Home/>} />
+          <Route path="/allproducts" element={<Allproducts />} />
           <Route path="/order" element={
             <ProtectedRoute>
               <Order/>
@@ -77,7 +79,7 @@ export const ProtectedRoute=({children})=>{
 const ProtectedRouteForAdmin=({children})=>{
   const admin=JSON.parse(localStorage.getItem('user'));
   // console.log(admin);
-  if(admin.user.email=== "hany@gmail.com"){
+  if(admin.user.email=== "hany1@gmail.com"){
     return children
   }else{
     return <Navigate to={'/login'}/> 

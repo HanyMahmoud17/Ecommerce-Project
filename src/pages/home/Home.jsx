@@ -23,7 +23,7 @@ function Home() {
   return (
     <Layout>
       <HeroSection/>
-      <Filter/>
+      {/* <Filter/> */}
       <ProductCard/>
       <Track/>
       <Testimonial/>

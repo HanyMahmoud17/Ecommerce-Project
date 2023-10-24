@@ -15,6 +15,11 @@ function Login() {
     const context = useContext(MyContext);
     const { loading, setLoading } = context;
 
+    const isEmailValid = (email) => {
+        const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+        return emailRegex.test(email);
+    };
+
     const navigate = useNavigate()
 
     const login = async () => {
@@ -24,16 +29,27 @@ function Login() {
             setLoading(false)
             return toast.error('Please complete all fields')
         }
+
+        if (!isEmailValid(email)) {
+            setLoading(false);
+            toast.error('Please enter a valid email address');
+            return;
+        }
         try {
             const result = await signInWithEmailAndPassword(auth, email, password)
-            toast.success('Login Successfully');
-            localStorage.setItem('user', JSON.stringify(result));
-            navigate('/')
+            if (result) {
+                toast.success('Login Successfully');
+                localStorage.setItem('user', JSON.stringify(result));
+                navigate('/');
+            } else {
+                toast.error('Login failed. Please check your email and password.');
+            }
             setLoading(false)
 
         }
         catch (e) {
             console.log(e);
+            
             setLoading(false)
         }
 

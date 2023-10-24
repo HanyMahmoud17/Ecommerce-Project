@@ -8,7 +8,7 @@ export default function Footer() {
   const context = useContext(myContext)
   const { toggleMode, mode } = context
   return (
-    <footer className="text-gray-600 body-font bg-gray-300" style={{ backgroundColor: mode === 'dark' ? 'rgb(46 49 55)' : '', color: mode === 'dark' ? 'white' : '', }}>
+    <footer className="text-gray-600 body-font bg-gray-100" style={{ backgroundColor: mode === 'dark' ? 'rgb(46 49 55)' : '', color: mode === 'dark' ? 'white' : '', }}>
 
       <div className="bg-color-primary-dark relative">
         <div className="container px-5 py-20 mx-auto">
@@ -32,24 +32,21 @@ export default function Footer() {
               <div className="space-y-6">
                 <h4 className="font-bold text-lg">Quick Links</h4>
                 <ul className="space-y-3">
-                  <li className="underline hover:no-underline hover:text-gray-500">
+                  <li className=" hover:no- hover:text-gray-500">
                   <Link to={'/'}>
                   Home
                     </Link>
                   </li>
-                  <li className="underline hover:no-underline hover:text-gray-500">
+                  <li className=" hover:no- hover:text-gray-500">
                     <a href="#features">Features</a>
                   </li>
-                  <li className="underline hover:no-underline hover:text-gray-500">
+                  <li className=" hover:no- hover:text-gray-500">
                     <a href="#testimonial">Testimonial</a>
                   </li>
-                  <li className="underline hover:no-underline hover:text-gray-500">
-                    <a href="#pricing">Pricing</a>
-                  </li>
-                  <li className="underline hover:no-underline hover:text-gray-500">
+                  <li className=" hover:no- hover:text-gray-500">
                     <a href="#blog">Blog</a>
                   </li>
-                  <li className="underline hover:no-underline hover:text-gray-500">
+                  <li className=" hover:no- hover:text-gray-500">
                     <a href="#contact">Contact</a>
                   </li>
                 </ul>
@@ -57,16 +54,16 @@ export default function Footer() {
               <div className="space-y-6">
                 <h4 className="font-bold text-lg">Help</h4>
                 <ul className="space-y-3">
-                  <li className="underline hover:no-underline hover:text-gray-500">
+                  <li className=" hover:no- hover:text-gray-500">
                   <Link to={'/returnpolicy'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Return Policy</Link>
                   </li>
-                  <li className="underline hover:no-underline hover:text-gray-500">
+                  <li className=" hover:no- hover:text-gray-500">
                   <Link to={'/about'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>About</Link>
                   </li>
-                  <li className="underline hover:no-underline hover:text-gray-500">
+                  <li className=" hover:no- hover:text-gray-500">
                   <Link to={'/contact'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Contact Us</Link>
                   </li>
-                  <li className="underline hover:no-underline hover:text-gray-500">
+                  <li className=" hover:no- hover:text-gray-500">
                   <Link to={'/privacypolicy'} className="text-gray-600 hover:text-gray-800" style={{ color: mode === 'dark' ? 'white' : '' }}>Privacy</Link>
                   </li>
                 </ul>

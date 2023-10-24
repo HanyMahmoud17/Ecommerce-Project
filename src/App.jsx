@@ -23,6 +23,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
+
 function App() {
   return (
     // here i use the context all over the project 
@@ -79,7 +80,7 @@ export const ProtectedRoute=({children})=>{
 const ProtectedRouteForAdmin=({children})=>{
   const admin=JSON.parse(localStorage.getItem('user'));
   // console.log(admin);
-  if(admin.user.email=== "hany1@gmail.com"){
+  if(admin.user.email=== "hany@gmail.com"){
     return children
   }else{
     return <Navigate to={'/login'}/> 

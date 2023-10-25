@@ -21,6 +21,7 @@ import Allproducts from './pages/allproducts/Allproducts';
 // toast 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Contact from './pages/contact/Contact';
 
 
 
@@ -32,6 +33,7 @@ function App() {
       <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/allproducts" element={<Allproducts />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/order" element={
             <ProtectedRoute>
               <Order/>

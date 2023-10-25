@@ -6,7 +6,7 @@ function Filter() {
     const { mode, searchkey, setSearchkey, filterType, setFilterType,
         filterPrice, setFilterPrice, product,handleResetFilter } = context
     return (
-        <div className=' container mx-auto px-4 mt-5 '>
+        <div className='container mx-auto px-4 mt-5 '>
             <div className="p-5 rounded-lg bg-gray-100 drop-shadow-xl border border-gray-200
 "              style={{ backgroundColor: mode === 'dark' ? '#282c34' : '', color: mode === 'dark' ? 'white' : '', }}>
                 <div className="relative">
@@ -28,7 +28,7 @@ function Filter() {
                     <p className="font-medium">
                         Filters
                     </p>
-                    <button onClick={handleResetFilter} className="px-4 py-2 bg-gray-50hover:bg-gray-200 text-gray-800 text-sm font-medium rounded-md" style={{ color: mode === 'dark' ? 'white' : '' }}>
+                    <button onClick={handleResetFilter} className="px-4 py-2 text-white bg-pink-600 hover:bg-gray-200 hover:text-black text-sm font-medium rounded-md" style={{ backgroundColor: mode === 'dark' ? 'rgb(64 66 70)' : '', color: mode === 'dark' ? 'white' : '', }} >
                         Reset Filter
                     </button>
                 </div>

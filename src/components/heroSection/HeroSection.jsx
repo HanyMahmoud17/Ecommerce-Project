@@ -60,10 +60,17 @@ function HeroSection() {
     return () => clearTimeout(slideTimeout); 
   }, [currentIndex]);
 
+  const backgroundImageStyle = {
+    backgroundImage: `url(${slides[currentIndex].url})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center center',
+    // backgroundRepeat: 'no-repeat',
+    // backgroundAttachment: 'fixed',
+  };
+
   return (
     <div className='max-w-[1400px] h-[500px] w-full m-auto py-3 px-2 relative group'>
-      <div
-        style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+      <div style={backgroundImageStyle}
         className='w-full h-full rounded-2xl bg-center bg-cover duration-500'
       ></div>
       {/* Left Arrow */}

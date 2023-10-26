@@ -23,7 +23,6 @@ export default function Footer() {
                 <p>Follow Us</p>
                 <FaFacebook className="text-gray-600 cursor-pointer hover:text-gray-800" />
                 <FaTwitter className="text-gray-600 cursor-pointer hover:text-gray-800" />
-                <FaYoutube className="text-gray-600 cursor-pointer hover:text-gray-800" />
                 <FaInstagram className="text-gray-600 cursor-pointer hover:text-gray-800" />
               </div>
               

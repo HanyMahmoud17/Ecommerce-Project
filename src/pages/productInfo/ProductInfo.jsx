@@ -10,7 +10,7 @@ import { fireDB } from '../../firebase/FirebaseConfig';
 
 function ProductInfo() {
     const context = useContext(myContext);
-    const { loading, setLoading } = context;
+    const { mode,loading, setLoading } = context;
 
     const [products, setProducts] = useState('')
     const params = useParams()
@@ -70,7 +70,7 @@ function ProductInfo() {
                             <h2 className="text-sm title-font text-gray-500 tracking-widest">
                                 BRAND NAME
                             </h2>
-                            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
+                            <h1 className="text-gray-900 text-3xl title-font font-medium mb-1" style={{ color: mode === 'dark' ? 'white' : '' }}>
                                 {products.title}
                             </h1>
                             <div className="flex mb-4">
@@ -179,10 +179,10 @@ function ProductInfo() {
                                 <span className="title-font font-medium text-2xl text-gray-900">
                                 ${products.price}
                                 </span>
-                                <button  onClick={()=>addCart(products)} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+                                <button  onClick={()=>addCart(products)} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" style={{ backgroundColor: mode === 'dark' ? 'rgb(46 49 55)' : '', color: mode === 'dark' ? 'white' : '' }}>
                                     Add To Cart
                                 </button>
-                                <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+                                <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4" >
                                     <svg
                                         fill="currentColor"
                                         strokeLinecap="round"

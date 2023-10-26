@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import Layout from '../../components/layout/Layout'
 import myContext from '../../context/data/myContext'
 import contact from '../../assets/img/contact.svg'
@@ -11,6 +11,9 @@ const contactStyle = {
 function Contact() {
     const context = useContext(myContext)
     const { mode } = context
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     return (
         <Layout>
             <div className="relative flex items-top justify-center p-20 min-h-screen bg-white sm:items-center sm:pt-0" style={contactStyle}>

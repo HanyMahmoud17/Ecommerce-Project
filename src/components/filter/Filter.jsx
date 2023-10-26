@@ -14,6 +14,7 @@ function Filter() {
         product,
         handleResetFilter,
     } = context;
+    console.log(filterType);
 
 
     const uniqueCategories = [...new Set(product.map((item) => item.category))];

@@ -8,6 +8,7 @@ function ProductCard() {
     const context = useContext(myContext)
     const { mode, product, searchkey, filterType,
         filterPrice } = context
+        console.log(filterType);
 
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart)

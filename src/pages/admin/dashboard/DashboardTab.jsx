@@ -252,12 +252,15 @@ function DashboardTab() {
                                                 Email
                                             </th>
                                             <th scope="col" className="px-6 py-3">
-                                                Date
+                                                ID
                                             </th>
+                                          
                                         </tr>
                                     </thead>
                                     {user.map((item,index)=>{
-                                        const {name,email,uid,date}=item;
+                                        const {name,email,uid,time}=item;
+
+                                        // console.log(time);
                                         return (
                                             <tbody>
 
@@ -274,9 +277,7 @@ function DashboardTab() {
                                             <td className="px-6 py-4 text-black " style={{ color: mode === 'dark' ? 'white' : '' }}>
                                                 {uid}
                                             </td>
-                                            <td className="px-6 py-4 text-black " style={{ color: mode === 'dark' ? 'white' : '' }}>
-                                                {date}
-                                            </td>
+                                         
                                         </tr>
                                     </tbody>
                                         )

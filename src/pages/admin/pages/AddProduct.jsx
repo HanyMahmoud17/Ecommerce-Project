@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import myContext from '../../../context/data/myContext'
 import addProduct from '../../../assets/img/slide1.jpg'
 
@@ -14,6 +14,11 @@ const backgroundImageStyle = {
 function AddProduct() {
     const context = useContext(myContext);
     const {products,setProducts,addProduct} = context
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+      
     return (
 
             <div className='flex justify-center items-center h-screen w-full' style={backgroundImageStyle}>

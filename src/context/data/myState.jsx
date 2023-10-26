@@ -97,6 +97,7 @@ function MyState(props) {
     }
   }
 
+  // console.log(product);
 // ****** update and delete the product *****//
   const edithandle = (item) => {
     setProducts(item)
@@ -181,6 +182,8 @@ function MyState(props) {
       setLoading(false)
     }
   }
+
+  // console.log(user);
 
 // filter state
 const [searchkey, setSearchkey] = useState('')

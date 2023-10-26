@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
-import slide1 from "../../assets/img/slide1.jpg";
-import slide2 from "../../assets/img/slide2.jpg";
+import slide1 from "../../assets/img/slide6.jpg";
+import slide2 from "../../assets/img/slide8.jpg";
 import slide3 from "../../assets/img/slide3.jpg";
-import slide4 from "../../assets/img/slide4.jpg";
+import slide4 from "../../assets/img/slide1.jpg";
 import slide5 from "../../assets/img/slide5.jpg";
 
 function HeroSection() {
@@ -63,7 +63,7 @@ function HeroSection() {
   const backgroundImageStyle = {
     backgroundImage: `url(${slides[currentIndex].url})`,
     backgroundSize: 'cover',
-    backgroundPosition: 'center center center',
+    backgroundPosition: 'center center',
     // backgroundRepeat: 'no-repeat',
     // backgroundAttachment: 'fixed',
   };
